@@ -19,16 +19,16 @@ class penduduk_F(FlaskForm):
     submit = SubmitField('Tambah')
 
     # cek nik
-    # def validate_nik(self, nik):
-    #     ceknik = Tpenduduk.query.filter_by(nik=form.nik.data).first()
-    #     if ceknik:
-    #         raise ValidationError('NPM Sudah Terdaftar, Gunakan NPM Yang Lain')
+    def validate_nik(self, nik):
+        ceknik = Tpenduduk.query.filter_by(nik=form.nik.data).first()
+        if ceknik:
+            raise ValidationError('NPM Sudah Terdaftar, Gunakan NPM Yang Lain')
 
     # cek email
-    # def validate_email(self, email):
-    #     cekemail = Tpenduduk.query.filter_by(email=form.email.data).first()
-    #     if cekemail:
-    #         raise ValidationError('Email Sudah Terdaftar, Gunakan Email Yang Lain')
+    def validate_email(self, email):
+        cekemail = Tpenduduk.query.filter_by(email=form.email.data).first()
+        if cekemail:
+            raise ValidationError('Email Sudah Terdaftar, Gunakan Email Yang Lain')
 
 
 class login(FlaskForm):
