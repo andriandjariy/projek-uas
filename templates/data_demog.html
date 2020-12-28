@@ -1,0 +1,87 @@
+{%extends "base.html"%}
+
+{%block title%}
+<h3 class="display-5">Sistem Informasi Kelurahan Kalumpang</h3>
+<p class="lead">Data Demografis Kelurahan Kalumpang</p>
+{%endblock%}
+
+{%block konten%}
+<div class="row row-cols-1 row-cols-md-3">
+    <div class="col-md-12 mb-4">
+        <table class="table table-hover table-light">
+            <tr>
+                <th>RT</th>
+                <th>Nama Ketua RT</th>
+                <th>Jumlah KK</th>
+                <th>Jumlak Jiwa P</th>
+                <th>Jumlak Jiwa L</th>
+                <th>Jumlak Jiwa P/L</th>
+            </tr>
+            {%for data in Data%}
+            <tr>
+
+                <td>{{data.rt}}</td>
+                <td>{{data.nama_rt}}</td>
+                <td>{{data.jumlah_kk}}</td>
+                <td>{{data.jumlah_p}}</td>
+                <td>{{data.jumlah_l}}</td>
+                <td>{{data.jumlah_jiwa}}</td>
+            </tr>
+
+            <!-- awal edit data pengaduan -->
+            <div id="modalEdit{{data.id}}" class="modal fade " role="dialog">
+                <div class="modal-dialog">
+                    <!-- modal konten -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit Data</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{url_for('editdatademog')}}" method="POST">
+                                <div class="form-group">
+                                    <label>RT:</label>
+                                    <input type="hidden" name="id" value="{{data.id}}">
+                                    <input type="text" class="form-control" name="rt" value="{{data.rt}}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Nama Ketua RT:</label>
+                                    <input type="text" class="form-control" name="nama_rt" value="{{data.nama_rt}}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Jumlah KK:</label>
+                                    <input type="text" class="form-control" name="jumlah_kk" value="{{data.jumlah_kk}}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Jumlah Laki-Laki:</label>
+                                    <input type="text" class="form-control" name="jumlah_p" value="{{data.jumlah_p}}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Jumlah Perempuan:</label>
+                                    <input type="text" class="form-control" name="jumlah_l" value="{{data.jumlah_l}}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Jumlah Jiwa:</label>
+                                    <input type="text" class="form-control" name="jumlah_jiwa"
+                                        value="{{data.jumlah_jiwa}}">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit">simpan</button>
+                                </div>
+                            </form>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- akhir data pengaduan -->
+            {%endfor%}
+
+        </table>
+    </div>
+
+</div>
+{%endblock%}

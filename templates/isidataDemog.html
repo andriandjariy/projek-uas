@@ -1,0 +1,48 @@
+{%extends "base2.html"%}
+
+{%block title%}
+<h3 class="display-5">Sistem Informasi Kelurahan Kalumpang</h3>
+<p class="lead">mengisi data demografi kelurahan kalumpang</p>
+{%endblock%}
+
+
+{%block konten%}
+<div class="container">
+    <h1>Megisi data Profil kelurahan kalumpang</h1>
+    <form method="POST">
+        {{form.hidden_tag()}}
+        <div class="form-group">
+            {{form.rt.label(class="form-control-label")}}
+            {{form.rt(class="form-control ")}}
+        </div>
+        <div class="form-group">
+            {{form.nama_ketua_rt.label(class="form-control-label")}}
+            {{form.nama_ketua_rt(class="form-control ")}}
+        </div>
+        <div class="form-group">
+            {{form.jumlah_kk.label(class="form-control-label")}}
+            {{form.jumlah_kk(class="form-control ")}}
+        </div>
+        <div class="form-group">
+            {{form.jumlah_jiwa_p.label(class="form-control-label")}}
+            {{form.jumlah_jiwa_p(class="form-control ")}}
+        </div>
+        <div class="form-group">
+            {{form.jumlah_jiwa_l.label(class="form-control-label")}}
+            {{form.jumlah_jiwa_l(class="form-control ")}}
+        </div>
+        <div class="form-group">
+            {{form.jumlah_jiwa.label(class="form-control-label")}}
+            {{form.jumlah_jiwa(class="form-control ")}}
+        </div>
+
+        <div class="form-group">
+            {{form.submit(class="btn btn-primary")}}
+        </div>
+
+    </form>
+
+</div>
+</div>
+</div>
+{%endblock%}
