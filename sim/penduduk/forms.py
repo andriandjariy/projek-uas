@@ -5,8 +5,6 @@ from flask_login import current_user
 from flask_wtf.file import FileField, FileAllowed
 
 
-
-
 class penduduk_F(FlaskForm):
     nik = StringField('NIK', validators=[DataRequired(), Length(min=10, max=15)])
     nama = StringField('NAMA', validators=[DataRequired()])
