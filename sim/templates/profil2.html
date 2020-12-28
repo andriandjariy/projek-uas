@@ -23,9 +23,9 @@
             <hr>
             <p>{{data.visi_misi}}</p>
             {%if current_user.is_authenticated%}
-            <a href="{{url_for('editprofil')}}/{{data.id}}" class="btn btn-warning btn-xs" data-toggle="modal"
+            <a href="{{url_for('Sadmin.editprofil')}}/{{data.id}}" class="btn btn-warning btn-xs" data-toggle="modal"
                 data-target="#modalEdit{{data.id}}">Edit</a>
-            <a class=" btn btn-info" href="{{ url_for ('editprofil')}}">isi data</a>
+            <a class=" btn btn-info" href="{{ url_for ('Sadmin.isi_data_profil')}}">isi data</a>
             {%else%}
             {%endif%}
 
@@ -40,7 +40,7 @@
 
                         </div>
                         <div class="modal-body">
-                            <form action="{{url_for('editprofil')}}" method="POST">
+                            <form action="{{url_for('Sadmin.editprofil')}}" method="POST">
                                 <div class="form-group">
                                     <label>Sejarah:</label>
                                     <input type="hidden" name="id" value="{{data.id}}">

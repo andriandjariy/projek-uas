@@ -1,0 +1,38 @@
+{%extends "base.html"%}
+
+{%block title%}
+<h3 class="display-5">Sistem Informasi Kelurahan Kalumpang</h3>
+<p class="lead">Data Demografis Kelurahan Kalumpang</p>
+{%endblock%}
+
+{%block konten%}
+<div class="row row-cols-1 row-cols-md-3">
+    <div class="col-md-12 mb-4">
+        <table class="table table-hover table-light">
+            <tr>
+                <th>RT</th>
+                <th>Nama Ketua RT</th>
+                <th>Jumlah KK</th>
+                <th>Jumlak Jiwa P</th>
+                <th>Jumlak Jiwa L</th>
+                <th>Jumlak Jiwa P/L</th>
+            </tr>
+            {%for data in Data%}
+            <tr>
+
+                <td>{{data.rt}}</td>
+                <td>{{data.nama_rt}}</td>
+                <td>{{data.jumlah_kk}}</td>
+                <td>{{data.jumlah_p}}</td>
+                <td>{{data.jumlah_l}}</td>
+                <td>{{data.jumlah_jiwa}}</td>
+            </tr>
+
+
+            {%endfor%}
+
+        </table>
+    </div>
+
+</div>
+{%endblock%}

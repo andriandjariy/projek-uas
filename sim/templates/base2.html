@@ -44,7 +44,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars">🔂</i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="{{ url_for ('home2')}}" class="nav-link">Home</a>
+          <a href="{{ url_for ('Sadmin.home2')}}" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Contact</a>
@@ -189,44 +189,44 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{ url_for ('home2')}}" class="nav-link active">
+                  <a href="{{ url_for ('Sadmin.home2')}}" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
                     <p class="btn btn-info">Dashboard</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url_for ('profil2')}}" class="nav-link active">
+                  <a href="{{ url_for ('Sadmin.profil2')}}" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
                     <p class="btn btn-warning">Data Profil</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url_for ('data_demog2')}}" class="nav-link">
+                  <a href="{{ url_for ('Sadmin.data_demog2')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p class="btn btn-warning">Data Demografi</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url_for ('ketrangan2')}}" class="nav-link">
+                  <a href="{{ url_for ('Sadmin.ketrangan2')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p class="btn btn-warning">Data Suarat Keterangan</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url_for ('daftar')}}" class="nav-link">
+                  <a href="{{ url_for ('Sadmin.daftar')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p class="btn btn-warning">Tambahakan Penduduk</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url_for ('daftar_admin')}}" class="nav-link">
+                  <a href="{{ url_for ('Sadmin.daftar_admin')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p class="btn btn-warning">Tambahkan Admin</p>
                   </a>
 
                   {%if current_user.is_authenticated%}
                 <li class="nav-item">
-                  <a href="{{ url_for ('logout_admin')}}" class="nav-link">
+                  <a href="{{ url_for ('Sadmin.logout_admin')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p class="btn btn-danger">Logout </p>
                   </a>
@@ -234,7 +234,7 @@
                 {%else%}
 
                 <li class="nav-item">
-                  <a href="{{ url_for ('admin')}}" class="nav-link">
+                  <a href="{{ url_for ('Sadmin.admin')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Login</p>
                   </a>

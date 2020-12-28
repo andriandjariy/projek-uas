@@ -28,7 +28,7 @@
                     <td>{{data.jumlah_l}}</td>
                     <td>{{data.jumlah_jiwa}}</td>
                     {%if current_user.is_authenticated%}
-                    <td><a href="{{url_for('editdatademog')}}/{{data.id}}" class="btn btn-warning btn-xs"
+                    <td><a href="{{url_for('Sadmin.editdatademog')}}/{{data.id}}" class="btn btn-warning btn-xs"
                             data-toggle="modal" data-target="#modalEdit{{data.id}}">Edit</a></td>
                     {%else%}
 
@@ -46,7 +46,7 @@
 
                             </div>
                             <div class="modal-body">
-                                <form action="{{url_for('editdatademog')}}" method="POST">
+                                <form action="{{url_for('Sadmin.editdatademog')}}" method="POST">
                                     <div class="form-group">
                                         <label>RT:</label>
                                         <input type="hidden" name="id" value="{{data.id}}">
@@ -92,7 +92,7 @@
 
             </table>
             {%if current_user.is_authenticated%}
-            <a class=" btn btn-info" href="{{ url_for ('isi_data_demog')}}">isi data</a>
+            <a class=" btn btn-info" href="{{ url_for ('Sadmin.isi_data_demog')}}">isi data</a>
             {%else%}
 
             {%endif%}
