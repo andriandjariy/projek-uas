@@ -29,7 +29,7 @@ def daftar():
         db.session.commit()
         flash('Akun berhasil daftar', 'primary')
         return redirect(url_for('Sadmin.daftar'))
-    return render_template("daftar.html",form=form)
+    return render_template("daftar2.html",form=form)
 
 
 @Sadmin.route("/daftar_admin",  methods=['GET', 'POST'])

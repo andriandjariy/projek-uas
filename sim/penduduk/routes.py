@@ -50,7 +50,6 @@ def daftar2():
         return redirect(url_for('Suser.user'))
     return render_template("daftar.html",form=form)
 
-
 @Suser.route("/user",  methods=['GET', 'POST'])
 def user():
     if current_user.is_authenticated:
