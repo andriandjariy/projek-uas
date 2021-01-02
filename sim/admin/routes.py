@@ -8,7 +8,7 @@ Sadmin = Blueprint('Sadmin', __name__)
 
 
 
-@Sadmin.route("/home2")
+@Sadmin.route("/utama")
 def home2():
     return render_template("home_admin.html")
 
